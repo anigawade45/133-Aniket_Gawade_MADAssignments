@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="#2196F3"
+            app:expandedTitleMarginStart="24dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="Assignment 3 - Layouts">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/gradient_banner_placeholder" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 1. ConstraintLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1. ConstraintLayout"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Constraint Layout is a flexible layout that allows views to be positioned using constraints instead of nesting layouts. It helps in reducing the view hierarchy and improves performance by a lot."
+                android:layout_marginBottom="12dp"
+                android:textColor="#616161"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="24dp">
+
+                <View
+                    android:id="@+id/profileCircle"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@android:drawable/btn_star_big_on"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/profileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="John Doe"
+                    android:textStyle="bold"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="@id/profileCircle"
+                    app:layout_constraintStart_toEndOf="@id/profileCircle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Software Developer"
+                    android:textColor="#757575"
+                    app:layout_constraintTop_toBottomOf="@id/profileName"
+                    app:layout_constraintStart_toStartOf="@id/profileName"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Follow"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 2. LinearLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2. LinearLayout"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="A LinearLayout aligns each of the view in a single direction either a vertical or a horizontal manner. It supports a weight attribute for each view."
+                android:layout_marginBottom="12dp"
+                android:textColor="#616161"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Home"
+                    android:layout_margin="4dp"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Settings"
+                    android:layout_margin="4dp"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Logout"
+                    android:layout_margin="4dp"/>
+
+            </LinearLayout>
+
+            <!-- 3. FrameLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3. FrameLayout"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Frame Layout is a simple layout mainly used to hold a single child view, though multiple views can be stacked on top of each other."
+                android:layout_marginBottom="12dp"
+                android:textColor="#616161"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="#EEEEEE"
+                android:layout_marginBottom="24dp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#BDBDBD"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Featured Content"
+                    android:layout_gravity="center"
+                    android:textSize="24sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:shadowColor="#000000"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="4"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NEW"
+                    android:background="#F44336"
+                    android:textColor="#FFFFFF"
+                    android:padding="4dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="top|end"
+                    android:layout_margin="8dp"/>
+
+            </FrameLayout>
+
+            <!-- 4. RelativeLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4. RelativeLayout"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Relative layout allows views to be relative to one another or to the parent layout. This makes positioning flexible."
+                android:layout_marginBottom="12dp"
+                android:textColor="#616161"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="16dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btnBase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Base Button"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnBase"
+                    android:layout_toLeftOf="@id/btnBase"
+                    android:layout_marginTop="8dp"
+                    android:text="Left"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/btnBase"
+                    android:layout_toRightOf="@id/btnBase"
+                    android:layout_marginTop="8dp"
+                    android:text="Right"/>
+
+            </RelativeLayout>
+
+            <!-- 5. TableLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5. TableLayout"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TableLayout arranges views in a grid-like format using rows and columns, similar to an HTML table."
+                android:layout_marginBottom="12dp"
+                android:textColor="#616161"/>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:elevation="2dp"
+                android:layout_marginBottom="24dp">
+
+                <TableRow android:background="#E1F5FE" android:padding="8dp">
+                    <TextView android:text="Layout" android:textStyle="bold" android:layout_margin="8dp"/>
+                    <TextView android:text="Key Feature" android:textStyle="bold" android:layout_margin="8dp"/>
+                </TableRow>
+                <TableRow android:padding="8dp">
+                    <TextView android:text="Linear" android:layout_margin="8dp"/>
+                    <TextView android:text="Single direction flow" android:layout_margin="8dp"/>
+                </TableRow>
+                <TableRow android:padding="8dp">
+                    <TextView android:text="Relative" android:layout_margin="8dp"/>
+                    <TextView android:text="View dependencies" android:layout_margin="8dp"/>
+                </TableRow>
+            </TableLayout>
+
+            <!-- 6. GridLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6. GridLayout"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GridLayout divides the screen into a matrix of rows and columns, allowing precise placement of elements."
+                android:layout_marginBottom="12dp"
+                android:textColor="#616161"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:background="#FFFFFF"
+                android:elevation="2dp"
+                android:padding="8dp"
+                android:layout_marginBottom="24dp">
+
+                <View android:layout_width="160dp" android:layout_height="100dp" android:layout_margin="8dp" android:background="#FFCDD2"/>
+                <View android:layout_width="160dp" android:layout_height="100dp" android:layout_margin="8dp" android:background="#F8BBD0"/>
+                <View android:layout_width="160dp" android:layout_height="100dp" android:layout_margin="8dp" android:background="#E1BEE7"/>
+                <View android:layout_width="160dp" android:layout_height="100dp" android:layout_margin="8dp" android:background="#D1C4E9"/>
+
+            </GridLayout>
+
+            <!-- 7. CoordinatorLayout -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7. CoordinatorLayout"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#212121"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Coordinator Layout is an advance layout that provides motion and interactive capabilities between views, like the collapsing toolbar you see at the top of this page."
+                android:layout_marginBottom="32dp"
+                android:textColor="#616161"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
